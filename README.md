@@ -32,7 +32,7 @@ This is a Node.js (Express) backend that performs OCR (Optical Character Recogni
 
 ```bash
 git clone https://github.com/SHIKHIL8137/-Aadhar_OCR_Back-End.git
-cd ocr-backend
+cd backend
 ```
 
 ### 2. Install dependencies
