@@ -1,0 +1,35 @@
+# Node.js
+**/node_modules/
+**/npm-debug.log
+
+# Python
+**/__pycache__/
+**/*.pyc
+
+# gRPC
+**/*.pb.go
+**/*_grpc.pb.go
+**/*_pb2.py
+**/*_pb2_grpc.py
+
+# Docker
+*.log
+*.pid
+docker-compose.override.yml
+
+# Secrets
+.env
+**/.env
+secrets.yaml
+credentials.json
+
+# IDE
+.vscode/
+.idea/
+
+# System
+.DS_Store
+Thumbs.db
+
+# .gitignore
+**/dist/
