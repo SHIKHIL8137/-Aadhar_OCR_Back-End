@@ -134,7 +134,7 @@ node dist/app.js
 
 ## ✍️ Author
 
-Built with ❤️ by [Your Name](https://github.com/yourusername)
+Built with ❤️ by [Shikhil K S](https://github.com/SHIKHIL8137)
 
 ---
 
