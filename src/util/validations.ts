@@ -5,8 +5,12 @@ export const isAadhaarCard = (text: string): boolean => {
     "government of india",
     "govt. of india",
     "govt of india",
-    "भारत सरकार"
+    "भारत सरकार",
+    "भारतीय विशिष्ट पहचान प्राधिकरण",
+    "ഭാരത് സർക്കാർ",
+    "ഭാരതിയ സവിശേഷ തിരിച്ചറിയൽ അതോറിറ്റി","Unique Identification Authority of India"
   ];
+  console.log(cleanedText)
   const hasGovtText = govtKeywords.some(keyword => cleanedText.includes(keyword));
 
   const aadhaarKeywords = [
@@ -14,7 +18,8 @@ export const isAadhaarCard = (text: string): boolean => {
     "aadhaar card",
     "aadhar",
     "aadhar card",
-    "आधार"
+    "आधार",
+    "Aadhaar"
   ];
   const hasAadhaarWord = aadhaarKeywords.some(keyword => cleanedText.includes(keyword));
 
@@ -26,6 +31,10 @@ export const isAadhaarCard = (text: string): boolean => {
   const hasDob = /(dob|date of birth|जन्म तिथि)/i.test(text);
   const hasGender = /(male|female|other|पुरुष|महिला)/i.test(text);
   const hasNameLikeField = /(name|नाम)/i.test(text);
+  console.log(hasGovtText)
+  console.log(hasAadhaarWord)
+  console.log(hasAadhaarNumber)
+  console.log(startsWithValidDigit)
   return (
     hasGovtText &&
     hasAadhaarWord &&
