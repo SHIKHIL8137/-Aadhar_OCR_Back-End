@@ -33,9 +33,11 @@ export class OcrController {
 
       const text = `${frontText}\n${backText}`;
 
-      if (!isAadhaarCard(text)) {
-        throw new AppError("Uploaded images do not appear to be Aadhaar cards", 400);
-      }
+      console.log(text)
+
+      // if (!isAadhaarCard(text)) {
+      //   throw new AppError("Uploaded images do not appear to be Aadhaar cards", 400);
+      // }
 
       const nameLine = text
         .split("\n")
