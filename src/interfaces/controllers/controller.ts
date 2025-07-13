@@ -202,9 +202,23 @@ export class OcrController {
       )?.[0];
 
       const rawGender = text.match(/\b(Male|Female|Transgender|M|F|T)\b/i)?.[0];
-      const gender = rawGender
-        ? rawGender[0].toUpperCase() + rawGender.slice(1).toLowerCase()
-        : null;
+      let gender: string | null = null;
+
+if (rawGender) {
+  const g = rawGender.trim().toUpperCase();
+  if (g === "M" || g === "MALE") {
+    gender = "Male";
+  } else if (g === "F" || g === "FEMALE") {
+    gender = "Female";
+  } else if (g === "T" || g === "TRANSGENDER") {
+    gender = "Transgender";
+  } else {
+    gender = g[0] + g.slice(1).toLowerCase(); 
+  }
+} else {
+  gender = null;
+}
+
 
       const aadhaar = text
         .match(/\b\d{4}[\s\-]?\d{4}[\s\-]?\d{4}\b/)?.[0]
