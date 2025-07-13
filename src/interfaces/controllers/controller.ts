@@ -172,8 +172,11 @@ export class OcrController {
       const text = `${frontText}\n${backText}`;
       console.log("OCR Text:\n", text);
 
-      if (!isAadhaarCard(text)) {
-        throw new AppError("Uploaded images do not appear to be Aadhaar cards", 400);
+      if (!isAadhaarCard(frontText)) {
+        throw new AppError("Uploaded frontEnd images do not appear to be Aadhaar cards", 400);
+      }
+      if (!isAadhaarCard(backText)) {
+        throw new AppError("Uploaded backEnd images do not appear to be Aadhaar cards", 400);
       }
 
       const lines = text
